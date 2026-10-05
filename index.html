@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bac-Info 3al-Tayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login / Verification Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <h2>Connexion Bac Info</h2>
+            <form id="loginForm">
+                <div class="input-group"><label>Nom & Prénom</label><input type="text" id="userName" required></div>
+                <div class="input-group"><label>Email</label><input type="email" id="userEmail" required></div>
+                <div class="input-group"><label>Mot de passe</label><input type="password" id="userPass" required></div>
+                <button type="submit">Demander Code Access</button>
+            </form>
+
+            <form id="codeForm" style="display:none;">
+                <p style="margin-bottom:10px; font-size:0.85rem; color:#94a3b8;">Entrez le code fourni par l'admin:</p>
+                <div class="input-group"><label>Code d'accès</label><input type="text" id="verificationCodeInput" required></div>
+                <button type="submit">Valider & Entrer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+            <div class="logo">
+                ⚡ Bac-Info 3al-Tayer
+            </div>
+            <span class="countdown-chip"></span>
+        </div>
+        <button class="logout-btn" id="logoutBtn">Déconnexion</button>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="home-container">
+
+        <!-- Welcome Title with Dynamic Name -->
+        <h1 id="welcomeMessage">
+            Bienvenue <span id="usernameDisplay" style="color: #38bdf8; font-weight: bold;"></span> sur la plateforme Bac-Info 3al-Tayer
+        </h1>
+
+        <p>Sélectionnez une matière pour commencer la révision :</p>
+
+        <!-- Reprendre où j'étais -->
+        <div class="resume-banner" id="resumeBannerHome">
+            <span class="resume-text">▸ Reprendre : <strong id="resumeLabelHome"></strong></span>
+            <a id="resumeLinkHome" class="btn-resume" href="#">Continuer</a>
+        </div>
+
+
+        <!-- Subjects Grid -->
+        <div class="subjects-grid">
+            <a href="prog.html" class="subject-card">
+                <span class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+                </span>
+                <h2>Algo & Prog</h2>
+                <p>Algo&Prog</p>
+            </a>
+
+            <a href="math.html" class="subject-card">
+                <span class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 4-9 7-9s2 10 5 10 3-6 6-6"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
+                </span>
+                <h2>Mathématiques</h2>
+                <p>Math</p>
+            </a>
+
+            <a href="physique.html" class="subject-card">
+                <span class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <h2>Physique & Chimie</h2>
+                <p>Physique</p>
+            </a>
+
+            <a href="sti-salma.html" class="subject-card">
+                <span class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+                </span>
+                <h2>STI (Mme Salma)</h2>
+                <p>STI (Mme Salma)</p>
+            </a>
+            <a href="sti-omar.html" class="subject-card">
+                <span class="subject-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                </span>
+                <h2>STI (Mr Omar)</h2>
+                <p>STI (Mr Omar)</p>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

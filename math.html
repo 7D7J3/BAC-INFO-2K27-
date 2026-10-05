@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathématiques</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-subject="Mathématiques">
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <h2>Connexion Bac Info</h2>
+      <form id="loginForm">
+        <div class="input-group"><label>Nom & Prénom</label><input type="text" id="userName" required></div>
+        <div class="input-group"><label>Email</label><input type="email" id="userEmail" required></div>
+        <div class="input-group"><label>Mot de passe</label><input type="password" id="userPass" required></div>
+        <button type="submit">Demander Code Access</button>
+      </form>
+
+      <form id="codeForm" style="display:none;">
+        <p style="margin-bottom:10px; font-size:0.85rem; color:#94a3b8;">Entrez le code fourni par l'admin:</p>
+        <div class="input-group"><label>Code d'accès</label><input type="text" id="verificationCodeInput" required></div>
+        <button type="submit">Valider & Entrer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="pdfPreviewModal" style="display:none;">
+    <div class="modal-card pdf-preview-card">
+      <div class="pdf-preview-header">
+        <h2 id="pdfPreviewTitle">Document</h2>
+        <button type="button" id="pdfPreviewClose" class="pdf-preview-close" aria-label="Fermer">✕</button>
+      </div>
+      <iframe id="pdfPreviewFrame" class="pdf-preview-frame" src="" title="Aperçu du document"></iframe>
+      <a id="pdfPreviewOpenLink" class="btn-resume pdf-preview-openlink" href="#" target="_blank" rel="noopener">Ouvrir dans Google Drive ↗</a>
+    </div>
+  </div>
+
+  <header>
+    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <h1>Mathématiques</h1>
+      <span class="countdown-chip"></span>
+    </div>
+    <a href="index.html" class="back-btn">← Arje3 l-el-Main Page</a>
+  </header>
+
+  <div class="main-layout">
+    <div class="sidebar" id="subjectTree"></div>
+    <div class="content-area">
+
+      <div class="resume-banner" id="resumeBanner">
+        <span class="resume-text">▸ Reprendre : <strong id="resumeLabel"></strong></span>
+        <button id="resumeBtn">Continuer</button>
+      </div>
+
+      <h2 id="videoTitle" style="margin-bottom: 15px; color: #38bdf8;">Sélectionnez une séance</h2>
+      <div class="player-wrapper">
+        <div class="security-overlay"></div>
+        <div class="video-container"><div id="player"></div></div>
+      </div>
+
+      <div class="controls-container">
+        <div class="progress-box">
+          <input type="range" id="progressBar" class="red-progress" value="0" min="0" max="100" step="0.1">
+          <span id="timeDisplay">0:00</span>
+        </div>
+        <div class="buttons-box">
+          <button id="playPauseBtn">Play / Pause</button>
+          <button id="rewindBtn">-10s</button>
+          <button id="forwardBtn">+10s</button>
+          <button id="speedBtn">⚡ 1x</button>
+          <button id="fullscreenBtn">Full Screen</button>
+        </div>
+      </div>
+
+      <div class="notes-section">
+        <h3>Documents (PDF) <span class="pdfs-count" id="pdfsCount"></span></h3>
+        <input type="text" id="pdfsSearch" class="pdfs-search" placeholder="Rechercher un document (chapitre, titre)...">
+        <div id="pdfsList" class="notes-list"></div>
+      </div>
+
+      <div class="notes-section">
+        <h3>Notes des élèves</h3>
+        <form id="noteForm">
+          <textarea id="noteInput" placeholder="Ajoute une note utile pour cette séance..." required></textarea>
+          <button type="submit">Publier</button>
+        </form>
+        <div id="notesList" class="notes-list"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

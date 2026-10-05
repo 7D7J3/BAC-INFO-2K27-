@@ -1,0 +1,29 @@
+
+
+/* =========================================================
+   AJOUTS : thème clair, bouton thème, progression, rappel Bac
+   ========================================================= */
+html[data-theme="light"]{
+  --bg:#F3F5F9; --bg-elevated:#FFFFFF; --panel:#FFFFFF; --panel-hover:#EDF1F7;
+  --border:#D3DAE5; --text:#0F172A; --text-muted:#5A6577;
+  --accent:#0B8F85; --accent-warm:#C77700; --danger:#D12A30; --success:#047857;
+}
+html[data-theme="light"] .badge-red{ color:#B91C1C; }
+html[data-theme="light"] .modal-overlay{ background:rgba(236,240,246,.94); }
+html[data-theme="light"] .subject-card{ box-shadow:0 1px 3px rgba(15,23,42,.08); }
+
+.theme-btn{
+  background:var(--panel); color:var(--text); border:1px solid var(--border);
+  border-radius:var(--radius); padding:.3rem .6rem; cursor:pointer; font-size:1rem; line-height:1;
+}
+.theme-btn:hover{ border-color:var(--accent); }
+
+.bac-reminder{
+  background:rgba(232,162,61,.12); border:1px solid rgba(232,162,61,.35);
+  border-radius:var(--radius); padding:.8rem 1rem; margin:0 0 1.2rem; font-size:.9rem;
+}
+
+.subj-progress{ margin-top:.8rem; }
+.subj-progress .bar{ height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+.subj-progress .bar span{ display:block; height:100%; background:var(--accent-warm); }
+.subj-progress small{ display:block; margin-top:.3rem; color:var(--text-muted); font-size:.75rem; }
